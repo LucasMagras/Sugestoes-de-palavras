@@ -32,53 +32,9 @@ priority_queue<Item> heap; // heap de tamanho k
 
 ### Árvore de Huffman
 
-
 ### Estrutura do codigo
 <p align="justify">
-O codigo consiste em 5 loops principais, sendo dois para leitura dos arquivos de texto, um para ler o arquivo de stop words, que são palavras que não devem ser contabilizadas, um para preencher a heap e outro apenas para printar os k elementos mais valiosos. Os loops de leitura leem linha por linha dos arquivos de dados, para cada linha é criado um fluxo de string e um token para armazenar cada palavra. Após isso existe outro loop dentro deste loop que lê cada token do fluxo de string e insere na hash junto com sua frequencia que é incrementada dentro do loop tambem.
 
-```cpp
-while (getline(dataFile, line)) { // le cada linha do arquivo de dados
-    stringstream ss(line); // cria um fluxo de string a partir da linha lida
-    string token; // variável para armazenar cada token (palavra) extraído da linha
-    while (ss >> token) { // le cada token (palavra) do fluxo de string
-        token.erase(remove_if(token.begin(), token.end(), ::ispunct), token.end());  // remove sinais de pontuação do token
-        transform(token.begin(), token.end(), token.begin(), ::tolower); // transforma para letras minusculas
-        token = ConverterAcentuadasParaMinusculas(token); // transforma os caracteres acentuados para minusculos
-        if (!token.empty() && CaracterEstranho(token)){ // evita adicionar espaços vazios na hash e trata o travessao
-            frequencia[token]++; // incrementa a palavra e a frequência dela na hash
-        }
-    }
-}
-```
-
-<p align="justify">
-Após esse processo de leitura dos arquivos e de inserção na hash, existe outro loop que lê o arquivo de stop words e remove elas da hash usando a função erase. A função erase é chamada na tabela de dispersão usando o token como chave. Isso exclui a entrada correspondente à chave da tabela de dispersão, resultando na remoção da palavra da contagem de frequência.
-
-```cpp
-while (getline(StopWordsFile, line)) { // excluindo as stop words da hash
-       stringstream ss(line);
-       string token;
-       while (ss >> token) {
-           frequencia.erase(token); // remove as palavras do arquivo de stopwords da hash
-       }
-   }
-```
-
-<p align="justify">
-Por fim, existe o loop responsável por preencher a heap com os "k" elementos mais valiosos. Que consiste em um for que percorre cada par chave-valor na tabela de dispersão frequencia. O par chave-valor é representado por const auto& pair, onde pair.first é a chave (palavra) e pair.second é o valor (frequência da palavra). A primeira condição verifica se a heap ainda não está cheia (contém menos de "k" elementos). Se for o caso, o par chave-valor atual é inserido diretamente na heap usando heap.push. Se a heap já estiver cheia, a condição do else if verifica se a frequência da palavra atual é maior do que a frequência do elemento no topo da heap. Isso é feito para comparar a palavra atual com a palavra de menor frequência entre os "k" elementos da heap. Se a frequência da palavra atual for maior, significa que ela é mais valiosa e deve ser incluída na heap em vez da palavra com a menor frequência atualmente no topo da heap. Portanto, o elemento de menor frequência é removido da heap com heap.pop(), e o novo par chave-valor é inserido usando heap.push.
-
-```cpp
- for (const auto& pair : frequencia) { // preenche a heap com os primeiros k elementos da hash
-       if (heap.size() < k) {
-           heap.push(Item(pair.first, pair.second));
-       } else if (pair.second > heap.top().frequencia) {
-           heap.pop();
-           heap.push(Item(pair.first, pair.second));
-       }
-   }
-```
- 
 ### Tratamentos
 <p align="justify">
 Antes de cada palavra ser inserida, ela passa alguns tratamentos, sendo um para remover os sinais de pontuação, dois para transformar todas as letras maiusculas para minusculas e um para tratar caracteres estranhos, além de um para tratar caracteres estranho. Para usar esses tratamentos foi necessario incluir a biblioteca <i>algorithm</i>. Para remover os sinais de pontuação foi usada a função erase junto com as funções remove_if, que remove elementos de uma sequência que atendem a uma determinada condição e a função ispunct que é usada para determinar se um caractere é um caractere de pontuação (por exemplo, vírgula, ponto, ponto-e-vírgula). A função remove_if remove os caracteres que atendem à condição passada, neste caso, ispunct, que verifica se um caractere é um sinal de pontuação.
