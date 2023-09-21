@@ -82,10 +82,7 @@ bool CaracterEstranho(string word) { // se o caractere estiver na lista de invá
 
 ## Conclusão
 <p align="justify">
-Neste trabalho, abordamos o problema clássico de encontrar os "k" itens mais valiosos em uma coleção de dados utilizando tabela hash e heap. A combinação dessas estruturas nos permitiu criar uma solução eficiente para identificar as palavras mais frequentes em um conjunto de textos. O processo de solução envolveu várias etapas, como a leitura de dados a partir de múltiplos arquivos, a contagem da frequência das palavras por meio de uma tabela de dispersão, a remoção de palavras não relevantes utilizando uma lista de stopwords, e a identificação das "k" palavras mais frequentes utilizando uma heap de prioridades.
-<p align="justify">
-O uso de técnicas como a transformação de caracteres para minúsculas, a remoção de caracteres de pontuação e a tratativa de caracteres acentuados demonstra a atenção aos detalhes necessária para uma análise precisa dos dados textuais. A utilização de estruturas de dados eficientes, como o unordered_map para a contagem de frequências e a priority_queue para a manutenção das palavras mais frequentes, garantiu um desempenho aceitavel levando em conta a massa de dados.
-
+ 
 ## Compilação e Execução
 
 Esse pequeno exemplo possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
