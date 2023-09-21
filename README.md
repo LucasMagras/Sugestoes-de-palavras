@@ -82,6 +82,8 @@ bool CaracterEstranho(string word) { // se o caractere estiver na lista de invá
 
 ## Conclusão
 <p align="justify">
+Ao concluir este trabalho, obtivemos uma compreensão mais aprofundada das diferentes implementações das árvores binárias e sua influência no sistema de autocompletar e sugestões de palavras. A análise comparativa nos permite avaliar a eficácia de cada abordagem em termos de desempenho e funcionalidade.
+
  
 ## Compilação e Execução
 
