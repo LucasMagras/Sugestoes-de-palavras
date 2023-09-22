@@ -343,7 +343,9 @@ void printHuffmanCodes(Huffman* root) {
 }
 ```
 
-## Resultado
+## Resultados
+<p align="justify">
+Os resultados podem ser vizualizados no arquivo output.txt na pasta dataset.
 
 ## Conclusão
 <p align="justify">
