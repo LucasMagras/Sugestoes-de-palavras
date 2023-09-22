@@ -44,16 +44,19 @@ AVL* insert(AVL* root, string word, int frequency) {
 
     return root;
 }
+
 int getHeight(AVL* node) {
     if (node == nullptr)
         return 0;
     return node->height;
 }
+
 int getBalanceFactor(AVL* node) {
     if (node == nullptr)
         return 0;
     return getHeight(node->left) - getHeight(node->right);
 }
+
 AVL* rightRotate(AVL* y) {
     AVL* x = y->left;
     AVL* T2 = x->right;
@@ -66,6 +69,7 @@ AVL* rightRotate(AVL* y) {
 
     return x;
 }
+
 AVL* leftRotate(AVL* x) {
     AVL* y = x->right;
     AVL* T2 = y->left;
