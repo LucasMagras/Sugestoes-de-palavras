@@ -273,6 +273,41 @@ struct Huffman {
 ```
 #### Função MakeHuffmanTree
 <p align="justify">
+Para fazer a criação da árvore de Huffman foi criada a função 'MakeHuffmanTree', que recebe a heap com os top k elementos como argumentos. Primeiro é feita uma cópia da priority_queue de entrada heap. Essa cópia é chamada de copyHeap e é usada para evitar modificar a fila de prioridade original enquanto a árvore de Huffman é construída. É criada tambem uma nova priority_queue chamada HuffmanPQueue que armazenará pares de frequência e ponteiros para objetos Huffman. A prioridade é determinada pelas frequências, portanto, os elementos com frequências menores estarão no topo da fila. O primeiro loop while é usado para processar todos os itens de entrada na copyHeap e criar nós Huffman individuais para cada item. Isso é feito da seguinte forma: O item no topo de copyHeap é retirado e armazenado em uma variável chamada item, depois um novo nó Huffman é criado com a palavra (item.palavra) e a frequência (item.frequencia) do item, por fim esse novo nó Huffman é colocado na HuffmanPQueue como um par de frequência e ponteiro para o nó Huffman. 
+<p align="justify">    
+Após o término do primeiro loop, a HuffmanPQueue conterá todos os nós Huffman individuais criados com base nas frequências dos itens de entrada.
+O segundo loop while (HuffmanPQueue.size() > 1) é usado para combinar os nós Huffman na HuffmanPQueue e construir a árvore de Huffman. Ele continua até que haja apenas um único nó na fila, que será a raiz da árvore de Huffman. Isso é feito da seguinte forma: Os dois nós com as menores frequências são retirados da HuffmanPQueue, isso é feito retirando os dois pares no topo da fila, depois um novo nó Huffman é criado com uma palavra vazia (pois a palavra não é relevante na árvore, apenas as frequências importam) e a soma das frequências dos dois nós retirados. Os dois nós retirados se tornam os filhos esquerdo e direito do novo nó Huffman e por fim, o novo nó Huffman é colocado de volta na HuffmanPQueue. Quando o segundo loop termina, a HuffmanPQueue conterá apenas um único nó Huffman, que será a raiz da árvore de Huffman. A função retorna o ponteiro para o nó raiz da árvore de Huffman, que pode ser usado para decodificar e codificar dados usando a árvore de Huffman.
+
+```cpp
+Huffman* MakeHuffmanTree(priority_queue<Item>& heap) {
+    priority_queue<Item> copyHeap = heap;
+
+    priority_queue<pair<int, Huffman*>, vector<pair<int, Huffman*>>, greater<pair<int, Huffman*>>> HuffmanPQueue;
+
+    while (!copyHeap.empty()) {
+        Item item = copyHeap.top();
+        copyHeap.pop();
+
+        Huffman* node = new Huffman(item.palavra, item.frequencia);
+        HuffmanPQueue.push(make_pair(item.frequencia, node));
+    }
+
+    while (HuffmanPQueue.size() > 1) {
+        pair<int, Huffman*> leftNode = HuffmanPQueue.top();
+        HuffmanPQueue.pop();
+        pair<int, Huffman*> rightNode = HuffmanPQueue.top();
+        HuffmanPQueue.pop();
+
+        Huffman* newNode = new Huffman("", leftNode.first + rightNode.first);
+        newNode->left = leftNode.second;
+        newNode->right = rightNode.second;
+
+        HuffmanPQueue.push(make_pair(newNode->frequency, newNode));
+    }
+
+    return HuffmanPQueue.top().second;
+}
+```
 
 
 
