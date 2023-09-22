@@ -248,7 +248,7 @@ AVL* leftRotate(AVL* x) {
 A árvore de Huffman é uma estrutura de dados e um algoritmo usado para compressão de dados sem perda. O principal objetivo da árvore de Huffman é representar um conjunto de dados de forma eficiente, atribuindo códigos de comprimento variável a cada símbolo, de modo que símbolos frequentes tenham códigos mais curtos e símbolos menos frequentes tenham códigos mais longos. O processo de compressão começa com uma análise dos dados de entrada para determinar a frequência de ocorrência de cada símbolo (por exemplo, caracteres em um arquivo de texto, bytes em um arquivo binário). Isso envolve contar quantas vezes cada símbolo aparece nos dados. A partir das frequências dos símbolos, é construída uma árvore binária especial chamada de árvore de Huffman. A árvore começa com uma folha para cada símbolo, onde cada folha tem uma frequência associada. Em seguida, a árvore é construída em etapas, combinando os dois nós (folhas ou subárvores) de menor frequência em um novo nó pai. Esse processo continua até que todos os nós estejam combinados em um único nó raiz. À medida que a árvore de Huffman é construída, são atribuídos códigos binários únicos a cada símbolo. Os códigos são derivados seguindo o caminho da raiz da árvore até a folha que representa o símbolo. Os símbolos mais frequentes têm códigos mais curtos, enquanto os símbolos menos frequentes têm códigos mais longos. Um importante aspecto da árvore de Huffman é que nenhum código é um prefixo de outro código. Isso significa que você pode sempre decodificar os dados de forma única, lendo os códigos um por um, sem ambiguidade.
 
 <p align="center">
-<img src="img/huffman.png"/> 
+<img src="img/huffman.PNG"/> 
 </p>
 
 <p align="justify">
