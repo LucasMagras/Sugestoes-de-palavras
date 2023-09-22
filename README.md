@@ -83,7 +83,21 @@ Em uma rotação dupla, conforme pode ser observado na Fig 3, dois movimentos s�
 <p align="justify"> 
 Para inserir os elementos na AAVL foi criada a função 'insert' que recebe 3 argumentos, 'AVL* root' que é um ponteiro para a raiz da árvore AVL, string word que é a palavra que será inserida e int frequency que é a frequência desta palavra. Primeiro, a função verifica se o nó raiz (root) é nulo. Se for nulo, isso significa que a árvore está vazia ou que foi alcançada uma folha da árvore onde um novo nó pode ser inserido. Nesse caso, a função cria um novo nó AVL com os valores word e frequency passados como argumentos e retorna um ponteiro para esse novo nó. Se o nó raiz não for nulo, a função compara a frequency do novo nó com a frequency do nó atual (root). Com base nessa comparação, a função decide se o novo nó deve ser inserido na subárvore esquerda ou direita do nó atual. Após a inserção do novo nó, a altura do nó atual (root) é atualizada com base na altura máxima entre suas subárvores esquerda e direita. A função calcula o fator de equilíbrio do nó atual chamando a função getBalanceFactor(root). O fator de equilíbrio é a diferença entre as alturas da subárvore esquerda e da subárvore direita. A função verifica se ocorreu um desequilíbrio na árvore. Se o fator de equilíbrio for maior que 1, isso indica um desequilíbrio na subárvore esquerda. Dependendo da relação entre a frequency do novo nó e a frequency do filho esquerdo do nó atual, são realizadas rotações para restaurar o equilíbrio. Da mesma forma, se o fator de equilíbrio for menor que -1, isso indica um desequilíbrio na subárvore direita, e novamente são realizadas rotações apropriadas. A função retorna o nó atual (ou o novo nó criado no caso da raiz ser nula ou o nó original com atualizações) após a inserção e o balanceamento.
 
-####
+#### Função getHeight
+<p align="justify"> 
+Esta função calcula a altura de um nó na árvore AVL. Ela recebe um nó (AVL* node) como argumento e retorna a altura desse nó. Se o nó for nulo (representando uma subárvore vazia), a altura é considerada como 0.
+
+#### Função getBalanceFactor
+<p align="justify"> 
+Esta função calcula o fator de equilíbrio de um nó na árvore AVL. O fator de equilíbrio é a diferença entre as alturas da subárvore esquerda e da subárvore direita do nó. Se o nó for nulo, o fator de equilíbrio é considerado como 0.
+
+#### Função rightRotate
+<p align="justify"> 
+Esta função realiza uma rotação simples para a direita em torno do nó y na árvore. Ela recebe o nó y como argumento e retorna o novo nó que se tornará a raiz da subárvore que antes tinha y como raiz. Um novo nó x é criado e recebe o filho esquerdo de y como seu filho direito. Isso significa que x "herda" o filho esquerdo de y. O filho esquerdo de y (x->right) agora se torna o filho esquerdo de y. Portanto, y perde seu filho esquerdo. Em seguida, as alturas de y e x são atualizadas. A altura de y é recalculada como a altura máxima entre suas novas subárvores esquerda e direita mais 1. A altura de x também é recalculada da mesma maneira. Finalmente, a função retorna o novo nó x, que agora é a raiz da subárvore onde a rotação ocorreu.
+
+#### Função leftRotate
+<p align="justify"> 
+Esta função realiza uma rotação simples para a esquerda em torno do nó x na árvore. Ela recebe o nó x como argumento e retorna o novo nó que se tornará a raiz da subárvore que antes tinha x como raiz. Um novo nó y é criado e recebe o filho direito de x como seu filho esquerdo. Isso significa que y "herda" o filho direito de x. O filho direito de x (y->left) agora se torna o filho direito de x. Portanto, x perde seu filho direito. Em seguida, as alturas de x e y são atualizadas. A altura de x é recalculada como a altura máxima entre suas novas subárvores esquerda e direita mais 1. A altura de y também é recalculada da mesma maneira. Finalmente, a função retorna o novo nó y, que agora é a raiz da subárvore onde a rotação ocorreu.
 
 ### Árvore de Huffman
 
