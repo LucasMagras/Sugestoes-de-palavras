@@ -23,7 +23,6 @@ void fake_main();
 void leitura(string FileName, unordered_map<string, int>& frequencia, string StopWords);
 void print_input(string FileName);
 void PreencherHeap(unordered_map<string, int>& frequencia, priority_queue<Item>& heap, string Filename);
-void ContarFrequenciaNoTexto(string palavra, string FileName);
 void MakeTree(priority_queue<Item>& Heap, string palavraLidaDoArquivoInput);
 string ConverterAcentuadasParaMinusculas(string num);
 bool CaracterEstranho(string word);
