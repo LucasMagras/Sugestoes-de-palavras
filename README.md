@@ -43,8 +43,7 @@ Para inserir os elementos na árvore binaria foi cirada a função 'insert' que 
 Finalmente, a função retorna o nó atual (ou o novo nó criado no caso da raiz ser nula ou o nó original com atualizações) após a inserção. A função garante que o nós são organizados de forma que os valores menores estão à esquerda e os valores maiores estão à direita, garantindo que a árvore seja ordenada de acordo com o critério de frequência. Vale ressaltar que como a inserção na arvore binaria é feita pegando os elementos da heap que está ordenada de acordo com a frequência, a função 'insert' acaba
 inserindo todos os elementos na sub-árvore da direita (já que os elementos da heap estão em ordem crescente), o que gera um desbalanceamento na árvore tranformando ela em uma lista linear. Esse problema é resolvido na próxima estrutura usada, a árvore AVL, por isso resolvi deixar desta forma.
 
-<p align="justify"> 
-Vale ressaltar que a função 'insert' recebe as palavras que estão na heap que contém os elementos mais frequentes do texto. Essa heap está ordenada, ou seja, a função 'insert' irá inserir todos os nós na sub-arvore da direita (já que a heap esta ordenada de forma crescente), gerando um desbalanceamento e transformando a árvore em uma lista linear. Este problema é resolvido na próxima estrutura, a árvore AVL, por isso deixei desta forma.
+> Vale ressaltar que os elementos que são inseridos na árvore são os elementos que estão na heap que contém as palarvas mais frequentes do texto. Essa heap está ordenada, ou seja, a função 'insert' irá inserir todos os nós na sub-arvore da direita (já que a heap esta ordenada de forma crescente), gerando um desbalanceamento e transformando a árvore em uma lista linear. Este problema é resolvido na próxima estrutura, a árvore AVL, por isso deixei desta forma.
 
 ### AVL
 <p align="justify"> 
