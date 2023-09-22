@@ -1,0 +1,950 @@
+
+Heap com os top k elementos mais frequentes no texto 'dataset/politica.txt
+processo - Frequência: 198
+política - Frequência: 198
+metas - Frequência: 199
+eleitores - Frequência: 199
+sentido - Frequência: 200
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+políticas - Frequência: 267
+político - Frequência: 400
+
+----------------------------------------------------------------------------------------
+
+Heap com os top k elementos mais frequentes no texto 'dataset/globalizacao.txt
+impacto - Frequência: 134
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+assim - Frequência: 199
+processo - Frequência: 200
+sentido - Frequência: 200
+
+----------------------------------------------------------------------------------------
+
+Heap com os top k elementos mais frequentes no texto 'dataset/filosofia.txt
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+----------------------------------------------------------------------------------------
+
+Heap com os top k elementos mais frequentes no texto 'dataset/filosofia2.txt
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+----------------------------------------------------------------------------------------
+
+Heap com os top k elementos mais frequentes no texto 'dataset/ti.txt
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+impacto - Frequência: 200
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+implantação - Frequência: 266
+segurança - Frequência: 268
+utilização - Frequência: 399
+
+----------------------------------------------------------------------------------------
+
+Heap com os top k elementos mais frequentes no texto 'dataset/ti2.txt
+desenvolvimento - Frequência: 199
+informações - Frequência: 200
+hardware - Frequência: 200
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+implantação - Frequência: 267
+segurança - Frequência: 268
+utilização - Frequência: 400
+
+----------------------------------------------------------------------------------------
+
+Palavras no arquivo 'input.txt' 
+globalizacao 
+politica 
+filosofia 
+tecnologia 
+impacto 
+capitu 
+
+----------------------------------------------------------------------------------------
+
+ARQUIVO QUE ESTA SENDO ANALISADO : dataset/politica.txt
+
+A palavra 'impacto' aparece 134 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+processo - Frequência: 198
+política - Frequência: 198
+metas - Frequência: 199
+eleitores - Frequência: 199
+sentido - Frequência: 200
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+políticas - Frequência: 267
+político - Frequência: 400
+
+Pre ordem :
+processo - Frequência: 198
+política - Frequência: 198
+metas - Frequência: 199
+eleitores - Frequência: 199
+sentido - Frequência: 200
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+políticas - Frequência: 267
+político - Frequência: 400
+
+Pos ordem :
+político - Frequência: 400
+políticas - Frequência: 267
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+sentido - Frequência: 200
+metas - Frequência: 199
+eleitores - Frequência: 199
+processo - Frequência: 198
+política - Frequência: 198
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+processo - Frequência: 198
+política - Frequência: 198
+metas - Frequência: 199
+eleitores - Frequência: 199
+sentido - Frequência: 200
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+políticas - Frequência: 267
+político - Frequência: 400
+
+Pre ordem :
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+metas - Frequência: 199
+eleitores - Frequência: 199
+processo - Frequência: 198
+política - Frequência: 198
+sentido - Frequência: 200
+políticas - Frequência: 267
+político - Frequência: 400
+
+Pos ordem :
+processo - Frequência: 198
+política - Frequência: 198
+sentido - Frequência: 200
+metas - Frequência: 199
+eleitores - Frequência: 199
+político - Frequência: 400
+políticas - Frequência: 267
+assim - Frequência: 201
+saúde - Frequência: 201
+melhoria - Frequência: 201
+atual - Frequência: 201
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+melhoria - Codigo de Huffman: 000
+atual - Codigo de Huffman: 001
+assim - Codigo de Huffman: 010
+políticas - Codigo de Huffman: 011
+político - Codigo de Huffman: 110
+política - Codigo de Huffman: 1000
+processo - Codigo de Huffman: 1001
+metas - Codigo de Huffman: 1010
+eleitores - Codigo de Huffman: 1011
+sentido - Codigo de Huffman: 1110
+saúde - Codigo de Huffman: 1111
+
+Palavras não encontradas no arquivo de texto:
+globalizacao
+politica
+filosofia
+tecnologia
+capitu
+
+----------------------------------------------------------------------------------------
+
+ARQUIVO QUE ESTA SENDO ANALISADO : dataset/globalizacao.txt
+
+A palavra 'impacto' aparece 134 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+assim - Frequência: 199
+processo - Frequência: 200
+sentido - Frequência: 200
+
+Pre ordem :
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+assim - Frequência: 199
+processo - Frequência: 200
+sentido - Frequência: 200
+
+Pos ordem :
+processo - Frequência: 200
+sentido - Frequência: 200
+assim - Frequência: 199
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+assim - Frequência: 199
+processo - Frequência: 200
+sentido - Frequência: 200
+
+Pre ordem :
+assim - Frequência: 199
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+processo - Frequência: 200
+sentido - Frequência: 200
+
+Pos ordem :
+importância - Frequência: 134
+sistema - Frequência: 134
+estabelecimento - Frequência: 134
+informações - Frequência: 134
+pode - Frequência: 134
+melhoria - Frequência: 134
+podemos - Frequência: 134
+processo - Frequência: 200
+sentido - Frequência: 200
+assim - Frequência: 199
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+podemos - Codigo de Huffman: 000
+importância - Codigo de Huffman: 001
+assim - Codigo de Huffman: 010
+sentido - Codigo de Huffman: 011
+processo - Codigo de Huffman: 100
+sistema - Codigo de Huffman: 1010
+melhoria - Codigo de Huffman: 1011
+pode - Codigo de Huffman: 1100
+impacto - Codigo de Huffman: 1101
+informações - Codigo de Huffman: 1110
+estabelecimento - Codigo de Huffman: 1111
+
+Palavras não encontradas no arquivo de texto:
+globalizacao
+politica
+filosofia
+tecnologia
+capitu
+
+----------------------------------------------------------------------------------------
+
+ARQUIVO QUE ESTA SENDO ANALISADO : dataset/filosofia.txt
+
+A palavra 'filosofia' aparece 19 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pre ordem :
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pos ordem :
+teoria - Frequência: 176
+sujeito - Frequência: 158
+condição - Frequência: 134
+mundo - Frequência: 134
+modo - Frequência: 129
+priori - Frequência: 125
+pensamento - Frequência: 115
+sistema - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 110
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pre ordem :
+priori - Frequência: 125
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 110
+pensamento - Frequência: 115
+sistema - Frequência: 115
+condição - Frequência: 134
+mundo - Frequência: 134
+modo - Frequência: 129
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pos ordem :
+sentido - Frequência: 110
+pensamento - Frequência: 115
+sistema - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+modo - Frequência: 129
+teoria - Frequência: 176
+sujeito - Frequência: 158
+condição - Frequência: 134
+mundo - Frequência: 134
+priori - Frequência: 125
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+modo - Codigo de Huffman: 000
+condição - Codigo de Huffman: 001
+mundo - Codigo de Huffman: 010
+sujeito - Codigo de Huffman: 011
+teoria - Codigo de Huffman: 100
+sentido - Codigo de Huffman: 1010
+sobre - Codigo de Huffman: 1011
+segundo - Codigo de Huffman: 1100
+pensamento - Codigo de Huffman: 1101
+sistema - Codigo de Huffman: 1110
+priori - Codigo de Huffman: 1111
+
+A palavra 'impacto' aparece 19 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pre ordem :
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pos ordem :
+teoria - Frequência: 176
+sujeito - Frequência: 158
+condição - Frequência: 134
+mundo - Frequência: 134
+modo - Frequência: 129
+priori - Frequência: 125
+pensamento - Frequência: 115
+sistema - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 110
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 110
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 115
+priori - Frequência: 125
+modo - Frequência: 129
+condição - Frequência: 134
+mundo - Frequência: 134
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pre ordem :
+priori - Frequência: 125
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 110
+pensamento - Frequência: 115
+sistema - Frequência: 115
+condição - Frequência: 134
+mundo - Frequência: 134
+modo - Frequência: 129
+sujeito - Frequência: 158
+teoria - Frequência: 176
+
+Pos ordem :
+sentido - Frequência: 110
+pensamento - Frequência: 115
+sistema - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+modo - Frequência: 129
+teoria - Frequência: 176
+sujeito - Frequência: 158
+condição - Frequência: 134
+mundo - Frequência: 134
+priori - Frequência: 125
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+modo - Codigo de Huffman: 000
+condição - Codigo de Huffman: 001
+mundo - Codigo de Huffman: 010
+sujeito - Codigo de Huffman: 011
+teoria - Codigo de Huffman: 100
+sentido - Codigo de Huffman: 1010
+sobre - Codigo de Huffman: 1011
+segundo - Codigo de Huffman: 1100
+pensamento - Codigo de Huffman: 1101
+sistema - Codigo de Huffman: 1110
+priori - Codigo de Huffman: 1111
+
+Palavras não encontradas no arquivo de texto:
+globalizacao
+politica
+tecnologia
+capitu
+
+----------------------------------------------------------------------------------------
+
+ARQUIVO QUE ESTA SENDO ANALISADO : dataset/filosofia2.txt
+
+A palavra 'filosofia' aparece 19 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+Pre ordem :
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+Pos ordem :
+teoria - Frequência: 192
+sujeito - Frequência: 154
+priori - Frequência: 144
+mundo - Frequência: 144
+condição - Frequência: 133
+modo - Frequência: 129
+sistema - Frequência: 119
+pensamento - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 111
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+Pre ordem :
+sistema - Frequência: 119
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 111
+pensamento - Frequência: 115
+condição - Frequência: 133
+modo - Frequência: 129
+sujeito - Frequência: 154
+priori - Frequência: 144
+mundo - Frequência: 144
+teoria - Frequência: 192
+
+Pos ordem :
+sentido - Frequência: 111
+pensamento - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+modo - Frequência: 129
+priori - Frequência: 144
+mundo - Frequência: 144
+teoria - Frequência: 192
+sujeito - Frequência: 154
+condição - Frequência: 133
+sistema - Frequência: 119
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+condição - Codigo de Huffman: 000
+priori - Codigo de Huffman: 001
+mundo - Codigo de Huffman: 010
+sujeito - Codigo de Huffman: 011
+teoria - Codigo de Huffman: 100
+sentido - Codigo de Huffman: 1010
+sobre - Codigo de Huffman: 1011
+segundo - Codigo de Huffman: 1100
+pensamento - Codigo de Huffman: 1101
+sistema - Codigo de Huffman: 1110
+modo - Codigo de Huffman: 1111
+
+A palavra 'impacto' aparece 20 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+Pre ordem :
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+Pos ordem :
+teoria - Frequência: 192
+sujeito - Frequência: 154
+priori - Frequência: 144
+mundo - Frequência: 144
+condição - Frequência: 133
+modo - Frequência: 129
+sistema - Frequência: 119
+pensamento - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 111
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+sentido - Frequência: 111
+sobre - Frequência: 114
+segundo - Frequência: 114
+pensamento - Frequência: 115
+sistema - Frequência: 119
+modo - Frequência: 129
+condição - Frequência: 133
+priori - Frequência: 144
+mundo - Frequência: 144
+sujeito - Frequência: 154
+teoria - Frequência: 192
+
+Pre ordem :
+sistema - Frequência: 119
+sobre - Frequência: 114
+segundo - Frequência: 114
+sentido - Frequência: 111
+pensamento - Frequência: 115
+condição - Frequência: 133
+modo - Frequência: 129
+sujeito - Frequência: 154
+priori - Frequência: 144
+mundo - Frequência: 144
+teoria - Frequência: 192
+
+Pos ordem :
+sentido - Frequência: 111
+pensamento - Frequência: 115
+sobre - Frequência: 114
+segundo - Frequência: 114
+modo - Frequência: 129
+priori - Frequência: 144
+mundo - Frequência: 144
+teoria - Frequência: 192
+sujeito - Frequência: 154
+condição - Frequência: 133
+sistema - Frequência: 119
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+condição - Codigo de Huffman: 000
+priori - Codigo de Huffman: 001
+mundo - Codigo de Huffman: 010
+sujeito - Codigo de Huffman: 011
+teoria - Codigo de Huffman: 100
+sentido - Codigo de Huffman: 1010
+sobre - Codigo de Huffman: 1011
+segundo - Codigo de Huffman: 1100
+pensamento - Codigo de Huffman: 1101
+sistema - Codigo de Huffman: 1110
+modo - Codigo de Huffman: 1111
+
+Palavras não encontradas no arquivo de texto:
+globalizacao
+politica
+tecnologia
+capitu
+
+----------------------------------------------------------------------------------------
+
+ARQUIVO QUE ESTA SENDO ANALISADO : dataset/ti.txt
+
+A palavra 'impacto' aparece 200 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+implantação - Frequência: 266
+segurança - Frequência: 268
+utilização - Frequência: 399
+
+Pre ordem :
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+implantação - Frequência: 266
+segurança - Frequência: 268
+utilização - Frequência: 399
+
+Pos ordem :
+utilização - Frequência: 399
+segurança - Frequência: 268
+implantação - Frequência: 266
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+implantação - Frequência: 266
+segurança - Frequência: 268
+utilização - Frequência: 399
+
+Pre ordem :
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+segurança - Frequência: 268
+implantação - Frequência: 266
+utilização - Frequência: 399
+
+Pos ordem :
+aumento - Frequência: 200
+melhor - Frequência: 200
+desenvolvimento - Frequência: 200
+implantação - Frequência: 266
+utilização - Frequência: 399
+segurança - Frequência: 268
+dados - Frequência: 201
+novas - Frequência: 201
+ti - Frequência: 201
+informações - Frequência: 201
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+ti - Codigo de Huffman: 000
+informações - Codigo de Huffman: 001
+implantação - Codigo de Huffman: 010
+segurança - Codigo de Huffman: 011
+utilização - Codigo de Huffman: 100
+aumento - Codigo de Huffman: 1010
+melhor - Codigo de Huffman: 1011
+desenvolvimento - Codigo de Huffman: 1100
+impacto - Codigo de Huffman: 1101
+dados - Codigo de Huffman: 1110
+novas - Codigo de Huffman: 1111
+
+Palavras não encontradas no arquivo de texto:
+globalizacao
+politica
+filosofia
+tecnologia
+capitu
+
+----------------------------------------------------------------------------------------
+
+ARQUIVO QUE ESTA SENDO ANALISADO : dataset/ti2.txt
+
+A palavra 'impacto' aparece 199 vezes neste texto
+
+Arvore binaria contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+desenvolvimento - Frequência: 199
+informações - Frequência: 200
+hardware - Frequência: 200
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+implantação - Frequência: 267
+segurança - Frequência: 268
+utilização - Frequência: 400
+
+Pre ordem :
+desenvolvimento - Frequência: 199
+informações - Frequência: 200
+hardware - Frequência: 200
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+implantação - Frequência: 267
+segurança - Frequência: 268
+utilização - Frequência: 400
+
+Pos ordem :
+utilização - Frequência: 400
+segurança - Frequência: 268
+implantação - Frequência: 267
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+informações - Frequência: 200
+hardware - Frequência: 200
+desenvolvimento - Frequência: 199
+
+
+AVL contendo as palavras mais frequentes para este arquivo :
+
+Em ordem :
+desenvolvimento - Frequência: 199
+informações - Frequência: 200
+hardware - Frequência: 200
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+implantação - Frequência: 267
+segurança - Frequência: 268
+utilização - Frequência: 400
+
+Pre ordem :
+implantação - Frequência: 267
+informações - Frequência: 200
+hardware - Frequência: 200
+desenvolvimento - Frequência: 199
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+segurança - Frequência: 268
+utilização - Frequência: 400
+
+Pos ordem :
+desenvolvimento - Frequência: 199
+melhor - Frequência: 201
+dados - Frequência: 201
+ti - Frequência: 201
+assim - Frequência: 201
+aumento - Frequência: 201
+informações - Frequência: 200
+hardware - Frequência: 200
+utilização - Frequência: 400
+segurança - Frequência: 268
+implantação - Frequência: 267
+
+
+Arvore de Huffman contendo as palavras mais frequentes para este arquivo :
+
+assim - Codigo de Huffman: 000
+aumento - Codigo de Huffman: 001
+implantação - Codigo de Huffman: 010
+segurança - Codigo de Huffman: 011
+utilização - Codigo de Huffman: 101
+desenvolvimento - Codigo de Huffman: 1000
+informações - Codigo de Huffman: 1001
+hardware - Codigo de Huffman: 1100
+melhor - Codigo de Huffman: 1101
+dados - Codigo de Huffman: 1110
+ti - Codigo de Huffman: 1111
+
+Palavras não encontradas no arquivo de texto:
+globalizacao
+politica
+filosofia
+tecnologia
+capitu
