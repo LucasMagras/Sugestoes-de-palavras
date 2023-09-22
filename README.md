@@ -36,12 +36,47 @@ Por fim, ainda utilizando da representação da Fig. 1, podemos observar que é 
 <p align="justify">
 Para este projeto o nó da árvore binaria foi feito com uma struct que contém a palavra, sua frequência e os ponteiros right e left que representam os filhos esquerdo e direito de um nó na árvore binária, além de um construtor que é usado para criar um novo objeto Binaria. Ele aceita dois argumentos: uma palavra (como uma string) e uma frequência (como um inteiro). Quando um novo nó é criado, esse construtor é usado para inicializar os valores dos membros word e frequency, enquanto left e right são inicializados como ponteiros nulos (nullptr).
 
+```cpp
+struct Binaria {
+    string word;
+    int frequency;
+    Binaria* left;
+    Binaria* right;
+
+    vector<string> palavras;
+
+    Binaria(string word, int freq) : word(word), frequency(freq),  left(nullptr), right(nullptr) {}
+};
+```
+
 #### Função insert
 <p align="justify"> 
 Para inserir os elementos na árvore binaria foi cirada a função 'insert' que é uma função recursiva que insere um novo nó na árvore. A função recebe 3 argumentos, Binaria* root que é um ponteiro para a raiz da árvore, string word que é a palavra que será inserida e int frequency que é a frequência desta palavra. Primeiro, a função verifica se o nó raiz (root) é nulo. Se for nulo, isso significa que a árvore está vazia ou que foi alcançada uma folha da árvore onde um novo nó pode ser inserido. Nesse caso, a função cria um novo nó Binaria com os valores word e frequency passados como argumentos e retorna um ponteiro para esse novo nó, efetivamente adicionando-o à árvore. Se o nó raiz não for nulo, a função verifica se a frequency do novo nó é menor do que a frequency do nó atual (root). Se for menor, isso significa que o novo nó deve ser inserido à esquerda do nó atual. A função chama recursivamente a função insert no filho esquerdo (root->left) e atualiza o filho esquerdo do nó atual com o resultado dessa chamada.Se a frequency do novo nó for maior do que a frequency do nó atual, a função chama recursivamente a função insert no filho direito (root->right) e atualiza o filho direito do nó atual com o resultado dessa chamada. Se a frequency do novo nó for igual à frequency do nó atual, isso significa que a palavra já existe na árvore com a mesma frequência. Nesse caso, a palavra é adicionada ao vetor palavras do nó atual.
 <p align="justify"> 
 Finalmente, a função retorna o nó atual (ou o novo nó criado no caso da raiz ser nula ou o nó original com atualizações) após a inserção. A função garante que o nós são organizados de forma que os valores menores estão à esquerda e os valores maiores estão à direita, garantindo que a árvore seja ordenada de acordo com o critério de frequência. Vale ressaltar que como a inserção na arvore binaria é feita pegando os elementos da heap que está ordenada de acordo com a frequência, a função 'insert' acaba
 inserindo todos os elementos na sub-árvore da direita (já que os elementos da heap estão em ordem crescente), o que gera um desbalanceamento na árvore tranformando ela em uma lista linear. Esse problema é resolvido na próxima estrutura usada, a árvore AVL, por isso resolvi deixar desta forma.
+
+```cpp
+Binaria* insert(Binaria* root, string word, int frequency) {
+    if (root == nullptr) {
+        return new Binaria(word, frequency);
+    }
+
+    if (frequency < root->frequency) {
+        root->left = insert(root->left, word, frequency);
+    }
+
+    else if(frequency > root->frequency){
+        root->right = insert(root->right, word, frequency);
+    }
+
+    else{
+        root->palavras.push_back(word);
+    }
+
+    return root;
+}
+```
 
 > Vale ressaltar que os elementos que são inseridos na árvore são os elementos que estão na heap que contém as palarvas mais frequentes do texto. Essa heap está ordenada, ou seja, a função 'insert' irá inserir todos os nós na sub-arvore da direita (já que a heap esta ordenada de forma crescente), gerando um desbalanceamento e transformando a árvore em uma lista linear. Este problema é resolvido na próxima estrutura, a árvore AVL, por isso deixei desta forma.
 
@@ -78,73 +113,138 @@ Considerando ainda o exemplo da Fig 3, observe que ao produzir o rebalanceamento
 <p align="justify"> 
 Em uma rotação dupla, conforme pode ser observado na Fig 3, dois movimentos são necessários. Para detecnar a necessidade desses movimentos, basta observar o sinal atribuído ao fator de do nó desbalanceado e o da sub-árvore causadora do problema. Note que, o nó desbalanceado mais uma vez é o nó cujo valor é 8. Nesse nó temos um fator de peso de -2, o que indica um desbalanceamento de sua sub-árvore esquerda. Já em sua sub-árvore esquerda observamos um fator de peso positivo, o que indica a necessidade de rotação dupla para correção. Neste caso, primeiramente produzimos uma rotação simples na sub-árvore esquerda para igualar seu sinal de fator de peso ao sinal do nó desbalanceado. Feito isso, produzimos uma segunda rotação ao contrário para corrigir o nó sinalizado no início como desbalanceado. Note que ao produzir rotações nos filhos, valores maiores que 1 podem ser produzidos, como no caso do nó 6 que recebeu após rotação um fator de -2. Embora saibamos que esse valor indica desbalanceamento, este é ignorado, uma vez que, tal fator só foi produzido após rotação de correção. Além disso, observe que para alinhar corretamente a estrutura, os nós de valor 5 e 6 foram realinhados. Isso é preciso porque ao realizar a rotação sem o realinhamento a composição da árvore ficará errada, tendo como filho direito do nó 6 o nó cujo valor é 5. Então, ao detectar uma rotação dupla, observe se o primeiro giro fará com que a integridade da estrutura se mantenha. Caso contrário, faça primeiro o alinhamento conforme demonstrado no exemplo, depois gire a estrutura.
 
+<p align="justify"> 
+Para este projeto o nó da árvore AVl foi feito com uma struct que contém a palavra, sua frequência, os ponteiros right e left que representam os filhos esquerdo e direito de um nó na árvore binária, a altura do nó e um construtor.
+
+```cpp
+struct AVL {
+    string word;
+    int frequency;
+    AVL* left;
+    AVL* right;
+    int height;
+
+    vector<string> palavras;
+
+    AVL(string w, int f): word(w), frequency(f), left(nullptr), right(nullptr), height(1) {}
+};
+```
+
 #### Função insert
 <p align="justify"> 
 Para inserir os elementos na AAVL foi criada a função 'insert' que recebe 3 argumentos, 'AVL* root' que é um ponteiro para a raiz da árvore AVL, string word que é a palavra que será inserida e int frequency que é a frequência desta palavra. Primeiro, a função verifica se o nó raiz (root) é nulo. Se for nulo, isso significa que a árvore está vazia ou que foi alcançada uma folha da árvore onde um novo nó pode ser inserido. Nesse caso, a função cria um novo nó AVL com os valores word e frequency passados como argumentos e retorna um ponteiro para esse novo nó. Se o nó raiz não for nulo, a função compara a frequency do novo nó com a frequency do nó atual (root). Com base nessa comparação, a função decide se o novo nó deve ser inserido na subárvore esquerda ou direita do nó atual. Após a inserção do novo nó, a altura do nó atual (root) é atualizada com base na altura máxima entre suas subárvores esquerda e direita. A função calcula o fator de equilíbrio do nó atual chamando a função getBalanceFactor(root). O fator de equilíbrio é a diferença entre as alturas da subárvore esquerda e da subárvore direita. A função verifica se ocorreu um desequilíbrio na árvore. Se o fator de equilíbrio for maior que 1, isso indica um desequilíbrio na subárvore esquerda. Dependendo da relação entre a frequency do novo nó e a frequency do filho esquerdo do nó atual, são realizadas rotações para restaurar o equilíbrio. Da mesma forma, se o fator de equilíbrio for menor que -1, isso indica um desequilíbrio na subárvore direita, e novamente são realizadas rotações apropriadas. A função retorna o nó atual (ou o novo nó criado no caso da raiz ser nula ou o nó original com atualizações) após a inserção e o balanceamento.
+
+```cpp
+AVL* insert(AVL* root, string word, int frequency) {
+    if (root == nullptr) {
+        return new AVL(word, frequency);
+    }
+    if (frequency < root->frequency) { // Insere na subárvore esquerda se a frequência for menor
+        root->left = insert(root->left, word, frequency);
+    } 
+    else if (frequency > root->frequency) {
+        root->right = insert(root->right, word, frequency);
+    } 
+    else { // Caso a frequência seja igual
+       root->palavras.push_back(word);
+    }
+
+    root->height = 1 + max(getHeight(root->left), getHeight(root->right));
+
+    int balance = getBalanceFactor(root);   
+
+    // Casos de desequilíbrio
+    if (balance > 1) {
+        if (frequency < root->left->frequency) {
+            // Rotação simples à direita
+            return rightRotate(root);
+        } 
+        else {
+            // Rotação dupla à esquerda-direita
+            root->left = leftRotate(root->left);
+            return rightRotate(root);
+        }
+    }
+    if (balance < -1) {
+        if (frequency > root->right->frequency) {
+            // Rotação simples à esquerda
+            return leftRotate(root);
+        } 
+        else {
+            // Rotação dupla à direita-esquerda
+            root->right = rightRotate(root->right);
+            return leftRotate(root);
+        }
+    }
+
+    return root;
+}
+```
 
 #### Função getHeight
 <p align="justify"> 
 Esta função calcula a altura de um nó na árvore AVL. Ela recebe um nó (AVL* node) como argumento e retorna a altura desse nó. Se o nó for nulo (representando uma subárvore vazia), a altura é considerada como 0.
 
+```cpp
+int getHeight(AVL* node) {
+    if (node == nullptr)
+        return 0;
+    return node->height;
+}
+```
+
 #### Função getBalanceFactor
 <p align="justify"> 
 Esta função calcula o fator de equilíbrio de um nó na árvore AVL. O fator de equilíbrio é a diferença entre as alturas da subárvore esquerda e da subárvore direita do nó. Se o nó for nulo, o fator de equilíbrio é considerado como 0.
+
+```cpp
+int getBalanceFactor(AVL* node) {
+    if (node == nullptr)
+        return 0;
+    return getHeight(node->left) - getHeight(node->right);
+}
+```
 
 #### Função rightRotate
 <p align="justify"> 
 Esta função realiza uma rotação simples para a direita em torno do nó y na árvore. Ela recebe o nó y como argumento e retorna o novo nó que se tornará a raiz da subárvore que antes tinha y como raiz. Um novo nó x é criado e recebe o filho esquerdo de y como seu filho direito. Isso significa que x "herda" o filho esquerdo de y. O filho esquerdo de y (x->right) agora se torna o filho esquerdo de y. Portanto, y perde seu filho esquerdo. Em seguida, as alturas de y e x são atualizadas. A altura de y é recalculada como a altura máxima entre suas novas subárvores esquerda e direita mais 1. A altura de x também é recalculada da mesma maneira. Finalmente, a função retorna o novo nó x, que agora é a raiz da subárvore onde a rotação ocorreu.
 
+```cpp
+AVL* rightRotate(AVL* y) {
+    AVL* x = y->left;
+    AVL* T2 = x->right;
+
+    x->right = y;
+    y->left = T2;
+
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
+
+    return x;
+}
+```
+
 #### Função leftRotate
 <p align="justify"> 
 Esta função realiza uma rotação simples para a esquerda em torno do nó x na árvore. Ela recebe o nó x como argumento e retorna o novo nó que se tornará a raiz da subárvore que antes tinha x como raiz. Um novo nó y é criado e recebe o filho direito de x como seu filho esquerdo. Isso significa que y "herda" o filho direito de x. O filho direito de x (y->left) agora se torna o filho direito de x. Portanto, x perde seu filho direito. Em seguida, as alturas de x e y são atualizadas. A altura de x é recalculada como a altura máxima entre suas novas subárvores esquerda e direita mais 1. A altura de y também é recalculada da mesma maneira. Finalmente, a função retorna o novo nó y, que agora é a raiz da subárvore onde a rotação ocorreu.
 
+```cpp
+AVL* leftRotate(AVL* x) {
+    AVL* y = x->right;
+    AVL* T2 = y->left;
+
+    y->left = x;
+    x->right = T2;
+
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+
+    return y;
+}
+```
+
 ### Árvore de Huffman
 
-### Estrutura do codigo
-<p align="justify">
-
-### Tratamentos
-<p align="justify">
-Antes de cada palavra ser inserida, ela passa alguns tratamentos, sendo um para remover os sinais de pontuação, dois para transformar todas as letras maiusculas para minusculas e um para tratar caracteres estranhos, além de um para tratar caracteres estranho. Para usar esses tratamentos foi necessario incluir a biblioteca <i>algorithm</i>. Para remover os sinais de pontuação foi usada a função erase junto com as funções remove_if, que remove elementos de uma sequência que atendem a uma determinada condição e a função ispunct que é usada para determinar se um caractere é um caractere de pontuação (por exemplo, vírgula, ponto, ponto-e-vírgula). A função remove_if remove os caracteres que atendem à condição passada, neste caso, ispunct, que verifica se um caractere é um sinal de pontuação.
- 
-```cpp
-token.erase(remove_if(token.begin(), token.end(), ::ispunct), token.end());  // remove sinais de pontuação do token
-```
- 
-<p align="justify">
-Já a função transform é usada para aplicar uma transformação a cada elemento em uma sequência (como um vetor, uma string, etc.) e armazenar os resultados em outra sequência ou na mesma sequência. No caso deste codigo, ela esta sendo usada para converter todos os caracteres do token para letras minúsculas, usando a função tolower como argumento. Essa transformação garante que palavras com diferentes caixas (maiúsculas/minúsculas) sejam tratadas como iguais. 
- 
-```cpp
-transform(token.begin(), token.end(), token.begin(), ::tolower); // transforma para letras minusculas
-```
-Além disso foi criada a função ConverterAcentuadasParaMinusculas() que trata apenas os caracteres acentuados, transformando todos em minusculos, já que a conversão de caracteres acentuados entre maiúsculas e minúsculas nem sempre é direta devido às diferenças entre os conjuntos de caracteres ASCII e Unicode, além da que a forma de representar um caracter acentuado é diferente de uma representação de um caracter normal. Essa função recebe uma string como argumento e duas strings são definidas, maiuscula e minuscula, cada uma delas contém caracteres acentuados maiúsculos e seus equivalentes minúsculos, respectivamente. O loop percorre os caracteres da string maiuscula, e a função replace é usada para substituir todas as ocorrências do caractere acentuado maiúsculo pelo seu equivalente minúsculo na string que a função recebeu. Isso é feito para cada caractere acentuado na sequência maiuscula. Após o loop a função retorna a string com os caracteres acentuados minusculos.
-
-```cpp
-string ConverterAcentuadasParaMinusculas(string num) {
-    string maiuscula = "ÁÀÃÉÈÍÌÓÒÚÙ";
-    string minuscula = "áàãéèíìóòúù";
-
-    for (size_t i = 0; i < maiuscula.size(); i++) {
-        replace(num.begin(), num.end(), maiuscula[i], minuscula[i]);
-    }
-    return num;
-}
-```
-<p align="justify">
-Ainda existe outra função criada no código para tratar apenas de um caracter em espedifico, neste caso o travessão. A função que remove todos os sinais de pontuação não consegue remover o travessão, porque o caractere '—' é um caractere especial e pode ter representações diferentes dependendo da codificação do arquivo. Para tratar isso foi usada a sequencia de bytes que representa o caractere '—' na codificação UTF-8, que se for achada na hash usando a função find(), retornará false.
- 
-```cpp
-bool CaracterEstranho(string word) { // se o caractere estiver na lista de inválidos, retorne falso
-    static unordered_set<char> invalidChars = {static_cast<char>(0xE2), static_cast<char>(0x80), static_cast<char>(0x94)}; // sequencia de bytes do travessao
-    
-    for (char c : word) {
-        if (invalidChars.find(c) != invalidChars.end()) {
-            return false; 
-        }
-    }
-    return true;
-}
-```
 
 ## Resultado
 
