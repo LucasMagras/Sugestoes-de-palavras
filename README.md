@@ -309,7 +309,39 @@ Huffman* MakeHuffmanTree(priority_queue<Item>& heap) {
 }
 ```
 
+#### Função printHuffmanCodes
+<p align="justify">
+A função printHuffmanCodes é responsável por imprimir os códigos de Huffman associados a cada palavra (ou símbolo) em uma árvore de Huffman. Ela recebe um ponteiro para o nó raiz de uma árvore de Huffman como argumento. Primeiro é verificado se a árvore está vazia, depois, é criada uma fila chamada HuffmanQueue. Essa fila será usada para percorrer a árvore de Huffman em largura, mantendo o par atual de nó Huffman e o código de Huffman associado a esse nó. O nó raiz da árvore é inserido na fila HuffmanQueue com um código vazio inicial. O código está vazio no início porque ainda não foi atribuído nenhum código. Logo depois inicia-se um loop que continua enquanto a fila HuffmanQueue não estiver vazia. Este loop percorrerá a árvore de Huffman em largura. O próximo par na fila HuffmanQueue é retirado da fila e armazenado na variável currentPair. Esse par consiste em um nó Huffman e o código de Huffman associado a ele. O nó Huffman é extraído do par e armazenado na variável current assim como o código de Huffman associado a esse nó é extraído do par e armazenado na variável currentCode. 
+<p align="justify">
+Depois tem 3 condições, a primeira verifica se o nó current é uma folha na árvore de Huffman, ou seja, não tem filhos esquerdo nem direito. Se for uma folha, significa que representa uma palavra na árvore, e seus códigos de Huffman estão prontos para serem impressos, nesse caso é imprimido a palavra representada por esse nó e seu código de Huffman correspondente. A segunda condição, verifica se o nó current tem um filho esquerdo, este filho é inserido na fila HuffmanQueue, com o código de Huffman atual acrescido de "0". Isso representa que "0" é adicionado ao código sempre que se desce para o filho esquerdo na árvore. E a ultima condição verifica se o nó current tem um filho direito, este filho é inserido na fila HuffmanQueue, com o código de Huffman atual acrescido de "1". Isso representa que "1" é adicionado ao código sempre que se desce para o filho direito na árvore. Essa função percorre a árvore de Huffman em largura (usando uma fila) e, para cada folha encontrada, imprime a palavra (ou símbolo) representada por essa folha e seu código de Huffman. Isso permite visualizar os códigos de Huffman atribuídos a cada palavra na árvore. 
 
+```cpp
+void printHuffmanCodes(Huffman* root) {
+    if (!root)
+        return;
+
+    queue<pair<Huffman*, string>> HuffmanQueue;
+    HuffmanQueue.push({root, ""});
+
+    while (!HuffmanQueue.empty()) {
+        pair<Huffman*, string> currentPair = HuffmanQueue.front();
+        HuffmanQueue.pop();
+
+        Huffman* current = currentPair.first;
+        string currentCode = currentPair.second;
+
+        if (current->left == nullptr && current->right == nullptr) {
+            cout << current->word << " - Codigo de Huffman: " << currentCode << std::endl;
+        }
+
+        if (current->left)
+            HuffmanQueue.push({current->left, currentCode + "0"});
+
+        if (current->right)
+            HuffmanQueue.push({current->right, currentCode + "1"});
+    }
+}
+```
 
 ## Resultado
 
