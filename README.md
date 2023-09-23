@@ -349,7 +349,11 @@ Os resultados podem ser vizualizados no arquivo output.txt na pasta dataset.
 
 ## Conclusão
 <p align="justify">
-Ao concluir este trabalho, obtivemos uma compreensão mais aprofundada das diferentes implementações das árvores binárias e sua influência no sistema de autocompletar e sugestões de palavras. A análise comparativa nos permite avaliar a eficácia de cada abordagem em termos de desempenho e funcionalidade.
+Ao concluir este trabalho, obtivemos uma compreensão mais aprofundada das diferentes implementações das árvores binárias e sua influência no sistema de sugestões de palavras. A análise comparativa nos permite avaliar a eficácia de cada abordagem em termos de desempenho e funcionalidade. Conseguimos observar o comportamento das 3 estruturas de dados e compara-las e termos de eficácia e comportamento. 
+    
+-  <code>Árvore binaria</code> : Concluimos que a arvore binaria é util por ter sua implementação mais simples se comparada as outras duas arvores e se você tiver uma coleção de dados não ordenada (o que não era o caso deste projeto), já que vimos que quando é o caso, a árvore binaria vira uma lista linear e se torna uma opção invalida.
+- <code>AVL</code> : Já a AVL não apresenta este problema, já que existe o sistema de balanceamento que permite inserir qualquer tipos de dados de entrada, seja eles ordenados ou não. Por causa disso ela se torna uma melhor opção em termos de eficiencia mesmo tendo uma implementação mais compplexa.
+- <code>Árvore de Huffman</code> :  A árvore de Huffman não mantém a ordenação dos elementos; em vez disso, ela é usada para compressão de dados, atribuindo códigos de comprimento variável a símbolos com base em suas frequências. Se torna muito eficiente tambem em comparação a arvore binaria.
 
  
 ## Compilação e Execução
